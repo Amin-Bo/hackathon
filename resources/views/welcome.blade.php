@@ -1,6 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
 <!doctype html>
 <html lang="en">
 <head>
@@ -140,7 +138,7 @@
                  </div>
                   <div class="row justify-content-center mr-6-md-8 ">
                        
-                  <a href="#" class="btn btn-outline-light btn-lg">Creer un compte</a>
+                  <a href="{{route('registerMember')}}" class="btn btn-outline-light btn-lg">Creer un compte</a>
                  </div>
                     </div>
                 </div>
@@ -155,4 +153,3 @@
    <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 </html>
-@endsection

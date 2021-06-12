@@ -25,7 +25,8 @@
         <div class="card-body">
           <h5 class="card-title"></h5>
           <div class="card-text">
-            <form action="#" method="post">
+            <form  method="POST" action="{{ route('register') }}">
+              @csrf
               <div class="row justify-content-center">
                 <div class="col col-sm-4 m-2">
                   <div class="form-group">
@@ -34,11 +35,17 @@
                       type="text"
                       name="name"
                       id="name"
-                      class="form-control"
+                      class="form-control @error('name') is-invalid @enderror"
                       placeholder="nom d'utilisateur"
                       aria-describedby="helpId"
+                      value="{{ old('name') }}" 
                     />
                   </div>
+                  @error('name')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
                 </div>
                 <div class="col col-sm-4 m-2">
                   <div class="form-group">
@@ -47,11 +54,17 @@
                       type="password"
                       name="password"
                       id="password"
-                      class="form-control"
+                      class="form-control @error('password') is-invalid @enderror"
                       placeholder="password"
                       aria-describedby="helpId"
+                      value=""
                     />
                   </div>
+                  @error('password')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
                 </div>
               </div>
               <div class="row justify-content-center">
@@ -62,11 +75,17 @@
                       type="text"
                       name="email"
                       id="email"
-                      class="form-control"
+                      class="form-control @error('email') is-invalid @enderror"
                       placeholder="utilisateur@exemple.domaine"
                       aria-describedby="helpId"
+                      value="{{ old('email') }}"
                     />
                   </div>
+                  @error('email')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
                 </div>
                 <div class="col col-sm-4 m-2  ">
                   <div class="form-group">
@@ -75,11 +94,17 @@
                       type="text"
                       name="adresse"
                       id="adresse"
-                      class="form-control"
+                      class="form-control @error('adresse') is-invalid @enderror"
                       placeholder="bizerte centre"
                       aria-describedby="helpId"
+                      value="{{ old('adresse')}}"
                     />
                   </div>
+                  @error('adresse')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
                 </div>
               </div>
               <div class="row justify-content-center">
@@ -90,22 +115,33 @@
                       type="number"
                       name="age"
                       id="age"
-                      class="form-control"
+                      class="form-control @error('age') is-invalid @enderror"
                       placeholder="12"
                       aria-describedby="helpId"
+                      value="{{ old('age') }} "
                     />
                   </div>
+                  @error('age')
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+              @enderror
                 </div><div class="col col-sm-4 m-2  ">
                   <div class="form-group">
                     <label for="description">description</label>
                     <textarea  name="description"
                     id="description"
-                    class="form-control"
+                    class="form-control @error('description') is-invalid @enderror"
                     placeholder=""
                     aria-describedby="helpId">
+                    
 
                     </textarea>
-                     
+                    @error('description')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
                   </div>
                 </div>
               </div>

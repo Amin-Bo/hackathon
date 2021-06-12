@@ -11,4 +11,8 @@ class Member extends Model
         return $this->belongsTo('App\User');
 
     }
+    public function clubs(){
+        return $this->belongsTo('App\Club');
+
+    }
 }
