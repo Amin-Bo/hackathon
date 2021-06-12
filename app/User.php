@@ -8,6 +8,10 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    public function members(){
+        return $this->belongsTo('App\Member');
+
+    }
     use Notifiable;
 
     /**
@@ -15,8 +19,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
+    protected $guarded = [
+      
     ];
 
     /**

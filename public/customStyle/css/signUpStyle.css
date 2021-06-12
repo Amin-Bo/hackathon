@@ -1,0 +1,26 @@
+nav{
+    height: 100px;
+}
+
+body {
+    height: 100vh;
+    background-image: url('../images/Ksiba_Bizerte_1.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.container {
+    transform: translateY(10%);
+    padding: 10px;
+}
+ .card{
+background-color: rgb(4 4 4 / 5%) !important;
+}
+h5.card-header {
+    color: #024b5a;
+}
+label {
+    color: #2f4950;
+    font-weight: bold;
+    font-size: 17px;
+}
