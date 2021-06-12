@@ -41,10 +41,10 @@ Coded by www.creative-tim.com
     <div class="main-panel">
       {{-- <pre> --}}
    @php
-   $d=json_decode($member,true);
+   //$d=json_decode($member,true);
         
-dd($d[0]['user']->id);
-    die();
+//dd($d[0]['user']);
+    //die();
    @endphp
 
       <div class="content">
