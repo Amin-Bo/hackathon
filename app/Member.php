@@ -8,11 +8,11 @@ class Member extends Model
 {
     protected $guarded = [ ];
     public function user(){
-        return $this->belongsTo('App\User');
+        return $this->hasOne(User::class,"email","email");
 
     }
     public function clubs(){
-        return $this->belongsTo('App\Club');
+        return $this->hasMany(Club::class,"email","email");
 
     }
 }

@@ -39,7 +39,13 @@ Coded by www.creative-tim.com
   <div class="wrapper ">
 
     <div class="main-panel">
-   
+      {{-- <pre> --}}
+   @php
+   $d=json_decode($member,true);
+        
+dd($d[0]['user']->id);
+    die();
+   @endphp
 
       <div class="content">
         <div class="row">
@@ -170,7 +176,7 @@ Coded by www.creative-tim.com
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Address</label>
-                        <input type="text" class="form-control" placeholder="Home Address" value="Bizerte, corniche">
+                        <input type="text" class="form-control" placeholder="Home Address" value="{{$member[0]->adresse}}">
                       </div>
                     </div>
                   </div>
@@ -179,7 +185,7 @@ Coded by www.creative-tim.com
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Description</label>
-                        <textarea class="form-control textarea">Oh so, your weak rhyme You doubt I'll bother, reading into it</textarea>
+                        <textarea class="form-control textarea">{{$member[0]->description}}</textarea>
                       </div>
                     </div>
                   </div>

@@ -17,11 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('checkIfMember','auth');
 Route::get('/signup',function(){
     return view('member.create');
 })->name('registerMember');
 Route::resource('member', 'MemberController');
 Route::get('/user', function () {
     return view("member.show");
-});
+})->middleware('checkIfMember','auth');

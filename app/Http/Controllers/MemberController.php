@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Member;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 class MemberController extends Controller
 {
@@ -14,7 +17,9 @@ class MemberController extends Controller
      */
     public function index()
     {
-        
+        $member = Member::with(['clubs','user'])->where("members.email","=",Auth::user()->email)->get();
+        dd($member);
+        return '';
     }
 
     /**
@@ -46,7 +51,8 @@ class MemberController extends Controller
      */
     public function show(Member $member)
     {
-        //
+        $member = Member::with(['clubs','user'])->where("members.email","=",Auth::user()->email)->get();
+        return view('member.show',['member'=>$member]);
     }
 
     /**

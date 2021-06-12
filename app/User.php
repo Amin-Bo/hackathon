@@ -8,9 +8,13 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    public function members(){
-        return $this->belongsTo('App\Member');
-
+    public function members()
+    {
+        return $this->hasOne(Member::class, "email", "email");
+    }
+    public function clubs()
+    {
+        return $this->hasMany(Club::class, "email", "email");
     }
     use Notifiable;
 
@@ -19,9 +23,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $guarded = [
-      
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
